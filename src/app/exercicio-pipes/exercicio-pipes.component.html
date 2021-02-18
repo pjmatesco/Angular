@@ -1,0 +1,19 @@
+<!-- <p> Titulo: {{filme.titulo | uppercase}}</p>
+
+<p> Nota: {{filme.nota | number:'1.1-2'}}</p>
+
+<p> Custo Gravação: {{filme.custoGravacao | currency:'BRL'}}</p>
+
+<p> Data de Estréia: {{filme.dataLancamento | date:'medium'}}</p> -->
+
+<h2> Lista de Compras</h2>
+<ul>
+    <li *ngFor="let listaCompras of compras">
+        <p>Produto: {{listaCompras.produto | uppercase}}</p>
+        <p>Valor: {{listaCompras.valor | currency:'BRL'}}</p>
+        <p>Quantidade: {{listaCompras.quantidade}}</p>
+        <!-- <p>Peso: {{listaCompras.peso | number:'1.1-2'}}</p> -->
+        <p>Peso: {{listaCompras.peso > 0 ? (listaCompras.peso | number:'1.1-2') + ' Kg' : 'Sem Peso'}}</p>
+        <p>Data: {{listaCompras.data | date:'short'}} </p>
+    </li>
+</ul>

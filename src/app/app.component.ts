@@ -8,6 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'Seja Bem-Vindo!';
+  pudim = 'Carro';
+  color = 'azul';
+  valorInicial = 10;
+
+  eventoRecebido($event: any){
+    console.log('Evento Recebido: ', true);
+  }
+
+
  
   //titulo = 'só que em pt';
   //meuNumero = 10;

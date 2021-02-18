@@ -1,0 +1,53 @@
+<!-- Estudo *ngIf -->
+<p>Valor do deveExibir {{ deveExibir }}</p>
+
+<button (click)="trocarValor()"> Trocar Valor </button>
+
+<div *ngIf="deveExibir; else elseBlock">
+    Ola, ngIF
+</div>
+
+<ng-template #elseBlock>
+    Vou ser exibido quando o deveExibir for false!
+</ng-template>
+
+<!-- <div *ngIf="soma(5, 6) > 10">
+    Exibe baseado na soma
+</div> -->
+
+<div *ngIf="deveExibir; then thenBlock else elseBlock2"></div>
+<ng-template #thenBlock> bloco true do ng-template </ng-template>
+<ng-template #elseBlock2> bloco false do ng-template </ng-template>
+
+<hr>
+
+<!-- Estudo *ngFor -->
+
+<ul>
+    <li *ngFor="let fruta of listaFrutas"> {{ fruta }} </li>
+</ul>
+
+<ul>
+    <li *ngFor="let carro of listaCarros; let index = index; first as primeiro; let ultimo = last">
+        {{primeiro}} - {{index + 1 }} {{carro.placa}} - {{ carro.cor }} - {{ultimo}}</li>
+</ul>
+<hr>
+
+<h2> Resolução do Exercicio </h2> 
+<!-- C:\Users\Paulo Júnior\Pictures\Exercicio ngFor+If -->
+
+
+<ul>
+    <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
+       <h2> {{ memesAgrupados.categoria }} </h2>
+
+        <div *ngFor="let meme of memesAgrupados.memes; let par = even">
+            <img [src]="PREFIXO_IMAGEM_URL + meme.imagemURL" *ngIf="par; else blocoPar"> 
+            <ng-template #blocoPar>
+                <h2>Par</h2>
+            </ng-template>
+        </div>        
+    </li>
+    
+
+</ul>

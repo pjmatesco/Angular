@@ -1,0 +1,19 @@
+<h3>Exercicio ngClass</h3>
+
+<button (click)="mudarParaVer()"> Mudar para Verde </button>
+
+<p [ngClass]="deveSerVerde ? 'verde' : 'vermelho'"> TESTANDO </p>
+
+<p [ngClass]="{
+    'verde': deveSerVerde,
+    'vermelho': !deveSerVerde
+}"> TESTANDO 2</p>
+
+<p [class]="deveSerVerde ? 'verde' : 'vermelho'">
+    Testando PropertyBinding Class
+</p>
+
+<p [class.verde]="deveSerVerde">
+    Testando PropertyBinding
+</p>
+
